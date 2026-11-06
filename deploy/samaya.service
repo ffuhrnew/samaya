@@ -12,6 +12,7 @@ Type=simple
 # Benutzer anpassen: derselbe, unter dem Reticulum (~/.reticulum) und
 # die Identity (~/.samaya/identity) liegen.
 User=CHANGE_ME
+Environment=PYTHONUNBUFFERED=1
 # Pfad anpassen (pipx: /home/<benutzer>/.local/bin/samaya)
 ExecStart=/usr/local/bin/samaya serve
 Restart=on-failure
