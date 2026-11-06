@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "samaya"
+version = "0.1.0"
+description = "Samaya - Zeitdienst für Reticulum"
+requires-python = ">=3.9"
+dependencies = ["rns>=1.5.4"]
+
+[project.scripts]
+samaya = "samaya.cli:main"
+
+[tool.setuptools]
+packages = ["samaya"]

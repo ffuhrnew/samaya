@@ -1,0 +1,21 @@
+[Unit]
+Description=Samaya - Zeitdienst fuer Reticulum
+# Haengt als Client an der Shared Instance von Reticulum.
+# Laeuft rnsd als eigener Dienst, hier eintragen:
+#   After=rnsd.service
+#   Wants=rnsd.service
+After=network-online.target time-sync.target
+Wants=network-online.target time-sync.target
+
+[Service]
+Type=simple
+# Benutzer anpassen: derselbe, unter dem Reticulum (~/.reticulum) und
+# die Identity (~/.samaya/identity) liegen.
+User=CHANGE_ME
+# Pfad anpassen (pipx: /home/<benutzer>/.local/bin/samaya)
+ExecStart=/usr/local/bin/samaya serve
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=multi-user.target

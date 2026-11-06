@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+# Identity-/Schlüsselmaterial nie einchecken
+*.id
+identity
+.samaya/
